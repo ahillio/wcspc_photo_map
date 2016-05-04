@@ -1,6 +1,7 @@
 name = wcspc_map
 core = 7.x
 package = Features
+dependencies[] = ctools
 dependencies[] = entityreference
 dependencies[] = exif_orientation
 dependencies[] = features
@@ -42,5 +43,7 @@ features[variable][] = menu_parent_photo
 features[variable][] = node_options_photo
 features[variable][] = node_preview_photo
 features[variable][] = node_submitted_photo
+features[variable][] = user_email_verification
+features[variable][] = user_register
 features[views_view][] = photo_map
-mtime = 1462371656
+mtime = 1462371816
