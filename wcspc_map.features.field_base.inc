@@ -82,6 +82,43 @@ function wcspc_map_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
+  // Exported field_base: 'field_demographic'
+  $field_bases['field_demographic'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_demographic',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'tid' => array(
+        'columns' => array(
+          'tid' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
+    'indexes' => array(
+      'tid' => array(
+        0 => 'tid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'taxonomy',
+    'settings' => array(
+      'allowed_values' => array(
+        0 => array(
+          'vocabulary' => 'audience',
+          'parent' => 0,
+        ),
+      ),
+    ),
+    'translatable' => 0,
+    'type' => 'taxonomy_term_reference',
+  );
+
   // Exported field_base: 'field_first_name'
   $field_bases['field_first_name'] = array(
     'active' => 1,
@@ -191,6 +228,7 @@ function wcspc_map_field_default_field_bases() {
     'translatable' => 0,
     'type' => 'image',
   );
+
 
   // Exported field_base: 'field_last_name'
   $field_bases['field_last_name'] = array(

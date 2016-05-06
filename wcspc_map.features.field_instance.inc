@@ -330,6 +330,7 @@ function wcspc_map_field_default_field_instances() {
     ),
   );
 
+
   // Exported field_instance: 'taxonomy_term-substance-field_image'
   $field_instances['taxonomy_term-substance-field_image'] = array(
     'bundle' => 'substance',
@@ -371,6 +372,37 @@ function wcspc_map_field_default_field_instances() {
       ),
       'type' => 'image_image',
       'weight' => 32,
+    ),
+  );
+
+  // Exported field_instance: 'user-user-field_demographic'
+  $field_instances['user-user-field_demographic'] = array(
+    'bundle' => 'user',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 3,
+      ),
+    ),
+    'entity_type' => 'user',
+    'field_name' => 'field_demographic',
+    'label' => 'Demographic',
+    'required' => 1,
+    'settings' => array(
+      'user_register_form' => 1,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 6,
     ),
   );
 
@@ -488,8 +520,10 @@ function wcspc_map_field_default_field_instances() {
   t('Audience');
   t('Body');
   t('Choose your demographic');
+  t('Demographic');
   t('First name');
   t('Image');
+  t('Images');
   t('Last name');
   t('Location');
   t('Photo');
