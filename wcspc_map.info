@@ -1,6 +1,7 @@
 name = wcspc_map
 core = 7.x
 package = Features
+dependencies[] = better_exposed_filters
 dependencies[] = block
 dependencies[] = context
 dependencies[] = ctools
@@ -71,4 +72,4 @@ features[variable][] = node_submitted_photo
 features[variable][] = user_email_verification
 features[variable][] = user_register
 features[views_view][] = photo_map
-mtime = 1462541041
+mtime = 1462541344

@@ -23,11 +23,136 @@ function wcspc_map_views_default_views() {
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
   $handler->display->display_options['title'] = 'Photo Map';
+  $handler->display->display_options['use_ajax'] = TRUE;
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
   $handler->display->display_options['query']['type'] = 'views_query';
-  $handler->display->display_options['exposed_form']['type'] = 'basic';
+  $handler->display->display_options['exposed_form']['type'] = 'better_exposed_filters';
+  $handler->display->display_options['exposed_form']['options']['autosubmit'] = TRUE;
+  $handler->display->display_options['exposed_form']['options']['bef'] = array(
+    'general' => array(
+      'allow_secondary' => 0,
+      'secondary_label' => 'Advanced options',
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'tid' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'field_demographic_tid' => array(
+      'bef_format' => 'bef',
+      'more_options' => array(
+        'bef_select_all_none' => 0,
+        'bef_collapsible' => 0,
+        'is_secondary' => 0,
+        'any_label' => '',
+        'bef_filter_description' => '',
+        'tokens' => array(
+          'available' => array(
+            0 => 'global_types',
+            1 => 'vocabulary',
+            'secondary_label' => NULL,
+            'collapsible_label' => NULL,
+            'combine_rewrite' => NULL,
+            'reset_label' => NULL,
+            'bef_filter_description' => NULL,
+            'any_label' => NULL,
+            'filter_rewrite_values' => NULL,
+          ),
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+          'filter_rewrite_values' => NULL,
+        ),
+        'rewrite' => array(
+          'filter_rewrite_values' => '',
+          'secondary_label' => NULL,
+          'collapsible_label' => NULL,
+          'combine_rewrite' => NULL,
+          'reset_label' => NULL,
+          'bef_filter_description' => NULL,
+          'any_label' => NULL,
+        ),
+        'secondary_label' => NULL,
+        'collapsible_label' => NULL,
+        'combine_rewrite' => NULL,
+        'reset_label' => NULL,
+        'filter_rewrite_values' => NULL,
+      ),
+      'secondary_label' => NULL,
+      'collapsible_label' => NULL,
+      'combine_rewrite' => NULL,
+      'reset_label' => NULL,
+      'bef_filter_description' => NULL,
+      'any_label' => NULL,
+      'filter_rewrite_values' => NULL,
+    ),
+    'secondary_label' => NULL,
+    'collapsible_label' => NULL,
+    'combine_rewrite' => NULL,
+    'reset_label' => NULL,
+    'bef_filter_description' => NULL,
+    'any_label' => NULL,
+    'filter_rewrite_values' => NULL,
+  );
+  $handler->display->display_options['exposed_form']['options']['input_required'] = 0;
+  $handler->display->display_options['exposed_form']['options']['text_input_required_format'] = 'full_html';
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['style_plugin'] = 'leaflet';
   $handler->display->display_options['style_options']['entity_type'] = 'node';
@@ -38,8 +163,8 @@ function wcspc_map_views_default_views() {
   $handler->display->display_options['style_options']['map'] = 'stamen-watercolor';
   $handler->display->display_options['style_options']['height'] = '600';
   $handler->display->display_options['style_options']['hide_empty'] = 0;
-  $handler->display->display_options['style_options']['zoom']['initialZoom'] = '16';
-  $handler->display->display_options['style_options']['zoom']['minZoom'] = '0';
+  $handler->display->display_options['style_options']['zoom']['initialZoom'] = '15';
+  $handler->display->display_options['style_options']['zoom']['minZoom'] = '11';
   $handler->display->display_options['style_options']['zoom']['maxZoom'] = '18';
   $handler->display->display_options['style_options']['icon']['iconType'] = 'html';
   $handler->display->display_options['style_options']['icon']['html'] = 'field_image';
@@ -51,6 +176,15 @@ function wcspc_map_views_default_views() {
   $handler->display->display_options['relationships']['field_substance_target_id']['id'] = 'field_substance_target_id';
   $handler->display->display_options['relationships']['field_substance_target_id']['table'] = 'field_data_field_substance';
   $handler->display->display_options['relationships']['field_substance_target_id']['field'] = 'field_substance_target_id';
+  /* Relationship: Content: Author */
+  $handler->display->display_options['relationships']['uid']['id'] = 'uid';
+  $handler->display->display_options['relationships']['uid']['table'] = 'node';
+  $handler->display->display_options['relationships']['uid']['field'] = 'uid';
+  /* Relationship: User: Demographic (field_demographic) */
+  $handler->display->display_options['relationships']['field_demographic_tid']['id'] = 'field_demographic_tid';
+  $handler->display->display_options['relationships']['field_demographic_tid']['table'] = 'field_data_field_demographic';
+  $handler->display->display_options['relationships']['field_demographic_tid']['field'] = 'field_demographic_tid';
+  $handler->display->display_options['relationships']['field_demographic_tid']['relationship'] = 'uid';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -101,6 +235,61 @@ function wcspc_map_views_default_views() {
     'photo' => 'photo',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
+  /* Filter criterion: Content: Has taxonomy term */
+  $handler->display->display_options['filters']['tid']['id'] = 'tid';
+  $handler->display->display_options['filters']['tid']['table'] = 'taxonomy_index';
+  $handler->display->display_options['filters']['tid']['field'] = 'tid';
+  $handler->display->display_options['filters']['tid']['value'] = array(
+    23 => '23',
+    25 => '25',
+    24 => '24',
+  );
+  $handler->display->display_options['filters']['tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['tid']['expose']['operator_id'] = 'tid_op';
+  $handler->display->display_options['filters']['tid']['expose']['label'] = 'Substances';
+  $handler->display->display_options['filters']['tid']['expose']['operator'] = 'tid_op';
+  $handler->display->display_options['filters']['tid']['expose']['identifier'] = 'tid';
+  $handler->display->display_options['filters']['tid']['expose']['required'] = TRUE;
+  $handler->display->display_options['filters']['tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    4 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['tid']['type'] = 'select';
+  $handler->display->display_options['filters']['tid']['vocabulary'] = 'substance';
+  /* Filter criterion: User: Demographic (field_demographic) */
+  $handler->display->display_options['filters']['field_demographic_tid']['id'] = 'field_demographic_tid';
+  $handler->display->display_options['filters']['field_demographic_tid']['table'] = 'field_data_field_demographic';
+  $handler->display->display_options['filters']['field_demographic_tid']['field'] = 'field_demographic_tid';
+  $handler->display->display_options['filters']['field_demographic_tid']['relationship'] = 'uid';
+  $handler->display->display_options['filters']['field_demographic_tid']['value'] = array(
+    2 => '2',
+    3 => '3',
+    4 => '4',
+  );
+  $handler->display->display_options['filters']['field_demographic_tid']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['field_demographic_tid']['expose']['operator_id'] = 'field_demographic_tid_op';
+  $handler->display->display_options['filters']['field_demographic_tid']['expose']['label'] = 'Demographic';
+  $handler->display->display_options['filters']['field_demographic_tid']['expose']['operator'] = 'field_demographic_tid_op';
+  $handler->display->display_options['filters']['field_demographic_tid']['expose']['identifier'] = 'field_demographic_tid';
+  $handler->display->display_options['filters']['field_demographic_tid']['expose']['required'] = TRUE;
+  $handler->display->display_options['filters']['field_demographic_tid']['expose']['multiple'] = TRUE;
+  $handler->display->display_options['filters']['field_demographic_tid']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    5 => 0,
+    6 => 0,
+    7 => 0,
+    4 => 0,
+    3 => 0,
+  );
+  $handler->display->display_options['filters']['field_demographic_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_demographic_tid']['vocabulary'] = 'audience';
 
   /* Display: Page */
   $handler = $view->new_display('page', 'Page', 'page');
