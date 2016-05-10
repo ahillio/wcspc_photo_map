@@ -18,6 +18,7 @@ dependencies[] = leaflet_views
 dependencies[] = leaflet_widget_point
 dependencies[] = media
 dependencies[] = options
+dependencies[] = realname
 dependencies[] = role_field
 dependencies[] = rules
 dependencies[] = strongarm
