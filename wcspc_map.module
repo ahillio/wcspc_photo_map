@@ -5,3 +5,13 @@
  */
 
 include_once 'wcspc_map.features.inc';
+
+/**
+ * Implements hook_boot().
+ */
+function wcspc_map_boot(){
+  global $conf;
+  $conf['locale_custom_strings_en'][''] = array(
+    'Registration successful. You are now logged in.' => 'You just logged in (we\'ll email you some info about this site for future reference) now post a photo.'
+  );
+}
