@@ -9,6 +9,69 @@
  */
 function wcspc_map_default_rules_configuration() {
   $items = array();
+  $items['rules_email_admin_about_new_user'] = entity_import('rules_config', '{ "rules_email_admin_about_new_user" : {
+      "LABEL" : "Email admin about new user",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "user_insert" : [] },
+      "DO" : [
+        { "mail" : {
+            "to" : "sarahpetrokonis@wcspc.org",
+            "subject" : "New user on wcspc.org",
+            "message" : "Hi Sarah, [account:name] just signed up on the website.  Their email address is [account:mail].  Thought I\\u0027d let you know.  -the Happy WCSPC Robot.",
+            "language" : [ "" ]
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_email_admin_when_new_photo_is_posted'] = entity_import('rules_config', '{ "rules_email_admin_when_new_photo_is_posted" : {
+      "LABEL" : "Email admin when new photo is posted",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "node_insert--photo" : { "bundle" : "photo" } },
+      "IF" : [
+        { "NOT user_has_role" : {
+            "account" : [ "node:author" ],
+            "roles" : { "value" : { "4" : "4", "3" : "3" } },
+            "operation" : "OR"
+          }
+        }
+      ],
+      "DO" : [
+        { "mail" : {
+            "to" : "sarahpetrokonis@wcspc.org",
+            "subject" : "New photo awaits your approval",
+            "message" : "Hi Sarah, a new photo has been submitted.  You can review and publish it here [site:url]\\/admin\\/content\\/photos. -the Happy WCSPC Robot",
+            "language" : [ "" ]
+          }
+        }
+      ]
+    }
+  }');
+  $items['rules_email_author_when_photo_is_published'] = entity_import('rules_config', '{ "rules_email_author_when_photo_is_published" : {
+      "LABEL" : "Email author when their photo is published",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "node_update--photo" : { "bundle" : "photo" } },
+      "IF" : [
+        { "data_is" : { "data" : [ "node-unchanged:status" ], "value" : "0" } },
+        { "AND" : [ { "data_is" : { "data" : [ "node:status" ], "value" : "1" } } ] }
+      ],
+      "DO" : [
+        { "mail" : {
+            "to" : [ "node:author:mail" ],
+            "subject" : "Your photo was published on WCSPC.org",
+            "message" : "Hi [node:author:field-first-name], your photo documenting substance use was published. Find it on the the map at [site:url]\\/photos-substance-use. -the Happy WCSPC Robot",
+            "language" : [ "" ]
+          }
+        }
+      ]
+    }
+  }');
   $items['rules_on_saving_photo_redirect_back_to_profile'] = entity_import('rules_config', '{ "rules_on_saving_photo_redirect_back_to_profile" : {
       "LABEL" : "on saving photo redirect back to profile",
       "PLUGIN" : "reaction rule",
