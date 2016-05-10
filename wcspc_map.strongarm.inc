@@ -112,6 +112,51 @@ function wcspc_map_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_password_reset_body';
+  $strongarm->value = 'Hi [user:field-first-name],
+
+Your username is [user:name-raw] and you can login to reset your password with the following link:
+[user:one-time-login-url].
+
+This link can only be used once and expires after one day, you can get a new one anytime.
+
+--  [site:name] team';
+  $export['user_mail_password_reset_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_password_reset_subject';
+  $strongarm->value = 'Replacement login information for [user:name] at [site:name]';
+  $export['user_mail_password_reset_subject'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_register_no_approval_required_body';
+  $strongarm->value = 'Hi [user:field_first_name], you just signed up to post photos of substance use at wcspc.org. Together we\'re making a healthier Winooski community!
+
+Here are a couple pointers about the website:
+
++ We review all photos before putting them on the map, we email you when we publish them.
++ You need to be logged in to post photos, you can login with your username ([user:name-raw]) at [site:login-url].
++ That\'s all.
+
+Thanks for helping out!
+
+--  [site:name] team';
+  $export['user_mail_register_no_approval_required_body'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'user_mail_register_no_approval_required_subject';
+  $strongarm->value = 'Posting photos to wcspc.org';
+  $export['user_mail_register_no_approval_required_subject'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'user_register';
   $strongarm->value = '1';
   $export['user_register'] = $strongarm;
