@@ -9,6 +9,25 @@
  */
 function wcspc_map_default_rules_configuration() {
   $items = array();
+  $items['rules_display_message_node_awaits_moderation'] = entity_import('rules_config', '{ "rules_display_message_node_awaits_moderation" : {
+      "LABEL" : "Display message - node awaits moderation",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "node_insert--photo" : { "bundle" : "photo" } },
+      "IF" : [
+        { "NOT user_has_role" : {
+            "account" : [ "node:author" ],
+            "roles" : { "value" : { "4" : "4", "3" : "3" } },
+            "operation" : "OR"
+          }
+        }
+      ],
+      "DO" : [
+        { "drupal_message" : { "message" : "Your photo will be published as soon as our staff approves it." } }
+      ]
+    }
+  }');
   $items['rules_email_admin_about_new_user'] = entity_import('rules_config', '{ "rules_email_admin_about_new_user" : {
       "LABEL" : "Email admin about new user",
       "PLUGIN" : "reaction rule",
@@ -104,6 +123,15 @@ function wcspc_map_default_rules_configuration() {
         }
       ],
       "DO" : [ { "redirect" : { "url" : "user\\/[account:uid]" } } ]
+    }
+  }');
+  $items['rules_redirect_user_on_node_save'] = entity_import('rules_config', '{ "rules_redirect_user_on_node_save" : {
+      "LABEL" : "Redirect user on node save",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "node_insert--photo" : { "bundle" : "photo" } },
+      "DO" : [ { "redirect" : { "url" : [ "node:author:url" ], "force" : "0" } } ]
     }
   }');
   return $items;

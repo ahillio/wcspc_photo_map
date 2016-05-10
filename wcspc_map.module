@@ -15,3 +15,11 @@ function wcspc_map_boot(){
     'Registration successful. You are now logged in.' => 'You just logged in (we\'ll email you some info about this site for future reference) now post a photo.'
   );
 }
+
+/**
+ * Implements hook_node_submit().
+ */
+// Let's do this with a rules action instead
+//function wcspc_map_node_submit(){
+//  drupal_set_message(t('Your photo will be published as soon as our staff approves it.'));
+//}
