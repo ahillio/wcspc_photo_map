@@ -6,6 +6,7 @@ dependencies[] = block
 dependencies[] = context
 dependencies[] = ctools
 dependencies[] = ds
+dependencies[] = email_registration
 dependencies[] = entity
 dependencies[] = entityreference
 dependencies[] = exif_orientation
