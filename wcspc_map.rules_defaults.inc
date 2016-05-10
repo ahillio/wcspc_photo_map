@@ -98,7 +98,7 @@ function wcspc_map_default_rules_configuration() {
       "IF" : [
         { "user_has_role" : {
             "account" : [ "account" ],
-            "roles" : { "value" : { "5" : "5", "6" : "6" } },
+            "roles" : { "value" : { "2" : "2" } },
             "operation" : "OR"
           }
         }
