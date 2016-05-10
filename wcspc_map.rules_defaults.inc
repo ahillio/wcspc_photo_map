@@ -9,25 +9,6 @@
  */
 function wcspc_map_default_rules_configuration() {
   $items = array();
-  $items['rules_grant_user_role'] = entity_import('rules_config', '{ "rules_grant_user_role" : {
-      "LABEL" : "grant user role",
-      "PLUGIN" : "reaction rule",
-      "ACTIVE" : false,
-      "OWNER" : "rules",
-      "REQUIRES" : [ "rules" ],
-      "ON" : { "user_insert" : [] },
-      "IF" : [
-        { "entity_has_field" : { "entity" : [ "account" ], "field" : "field_user_audience" } }
-      ],
-      "DO" : [
-        { "data_set" : {
-            "data" : [ "account:roles:0" ],
-            "value" : [ "account:field-user-audience" ]
-          }
-        }
-      ]
-    }
-  }');
   $items['rules_on_saving_photo_redirect_back_to_profile'] = entity_import('rules_config', '{ "rules_on_saving_photo_redirect_back_to_profile" : {
       "LABEL" : "on saving photo redirect back to profile",
       "PLUGIN" : "reaction rule",
