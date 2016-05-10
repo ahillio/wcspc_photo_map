@@ -12,6 +12,7 @@ function wcspc_map_default_rules_configuration() {
   $items['rules_grant_user_role'] = entity_import('rules_config', '{ "rules_grant_user_role" : {
       "LABEL" : "grant user role",
       "PLUGIN" : "reaction rule",
+      "ACTIVE" : false,
       "OWNER" : "rules",
       "REQUIRES" : [ "rules" ],
       "ON" : { "user_insert" : [] },
