@@ -19,7 +19,7 @@ function wcspc_map_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'photos-substance-use' => 'photos-substance-use',
+        'evidence-substance-use' => 'evidence-substance-use',
       ),
     ),
     'user' => array(
@@ -62,7 +62,7 @@ function wcspc_map_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'photos-substance-use' => 'photos-substance-use',
+        'evidence-substance-use' => 'evidence-substance-use',
       ),
     ),
     'user' => array(
