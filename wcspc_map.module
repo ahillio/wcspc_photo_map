@@ -24,8 +24,19 @@ function wcspc_map_boot(){
 //  drupal_set_message(t('Your photo will be published as soon as our staff approves it.'));
 //}
 
-function wcspc_form_user_register_form_alter(&$form, $form_id) {
+function wcspc_map_form_user_register_form_alter(&$form, $form_id) {
   drupal_set_title('You\'re one step from posting photos!');
   $form['field_demographic']['#weight'] = 2;
-  dpm($form);
+  $form['account']['mail']['#description'] = '';
+  $form['account']['pass']['#description'] = '';
+  //sdpm($form);
+}
+
+function wcspc_map_form_user_login_alter(&$form, $form_id) {
+  $form['pass']['#description'] = 'If you forgot your password you can <a href="/user/password" title="Login without password">reset it here</a>.';
+  //sdpm($form);
+}
+
+function wcspc_map_menu_alter(&$items) {
+  $items['user/password']['type'] = MENU_CALLBACK;
 }
