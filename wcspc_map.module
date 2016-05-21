@@ -23,3 +23,9 @@ function wcspc_map_boot(){
 //function wcspc_map_node_submit(){
 //  drupal_set_message(t('Your photo will be published as soon as our staff approves it.'));
 //}
+
+function wcspc_form_user_register_form_alter(&$form, $form_id) {
+  drupal_set_title('You\'re one step from posting photos!');
+  $form['field_demographic']['#weight'] = 2;
+  dpm($form);
+}
