@@ -249,7 +249,6 @@ function wcspc_map_views_default_views() {
   $handler->display->display_options['filters']['tid']['expose']['label'] = 'Substances';
   $handler->display->display_options['filters']['tid']['expose']['operator'] = 'tid_op';
   $handler->display->display_options['filters']['tid']['expose']['identifier'] = 'tid';
-  $handler->display->display_options['filters']['tid']['expose']['required'] = TRUE;
   $handler->display->display_options['filters']['tid']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['tid']['expose']['remember_roles'] = array(
     2 => '2',
@@ -277,7 +276,6 @@ function wcspc_map_views_default_views() {
   $handler->display->display_options['filters']['field_demographic_tid']['expose']['label'] = 'Demographic';
   $handler->display->display_options['filters']['field_demographic_tid']['expose']['operator'] = 'field_demographic_tid_op';
   $handler->display->display_options['filters']['field_demographic_tid']['expose']['identifier'] = 'field_demographic_tid';
-  $handler->display->display_options['filters']['field_demographic_tid']['expose']['required'] = TRUE;
   $handler->display->display_options['filters']['field_demographic_tid']['expose']['multiple'] = TRUE;
   $handler->display->display_options['filters']['field_demographic_tid']['expose']['remember_roles'] = array(
     2 => '2',
