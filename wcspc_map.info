@@ -31,7 +31,6 @@ dependencies[] = uuid_features
 dependencies[] = views
 features[context][] = map_toolbar_anon
 features[context][] = map_toolbar_auth
-features[context][] = user_profile_layout
 features[ctools][] = context:context:3
 features[ctools][] = ds:ds:1
 features[ctools][] = strongarm:strongarm:1
