@@ -96,38 +96,5 @@ function wcspc_map_context_default_contexts() {
   t('map');
   $export['map_toolbar_auth'] = $context;
 
-  $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
-  $context->api_version = 3;
-  $context->name = 'user_profile_layout';
-  $context->description = '';
-  $context->tag = '';
-  $context->conditions = array(
-    'path' => array(
-      'values' => array(
-        'user*' => 'user*',
-      ),
-    ),
-    'user' => array(
-      'values' => array(
-        'authenticated user' => 'authenticated user',
-      ),
-    ),
-  );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'block-15' => array(
-          'module' => 'block',
-          'delta' => '15',
-          'region' => 'sidebar_second',
-          'weight' => '-10',
-        ),
-      ),
-    ),
-  );
-  $context->condition_mode = 1;
-  $export['user_profile_layout'] = $context;
-
   return $export;
 }
