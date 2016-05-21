@@ -134,5 +134,24 @@ function wcspc_map_default_rules_configuration() {
       "DO" : [ { "redirect" : { "url" : [ "node:author:url" ], "force" : "0" } } ]
     }
   }');
+  $items['rules_user_login_message'] = entity_import('rules_config', '{ "rules_user_login_message" : {
+      "LABEL" : "User Login Message",
+      "PLUGIN" : "reaction rule",
+      "OWNER" : "rules",
+      "REQUIRES" : [ "rules" ],
+      "ON" : { "user_login" : [] },
+      "IF" : [
+        { "NOT user_has_role" : {
+            "account" : [ "account" ],
+            "roles" : { "value" : { "4" : "4", "3" : "3" } },
+            "operation" : "OR"
+          }
+        }
+      ],
+      "DO" : [
+        { "drupal_message" : { "message" : "You logged in, now post your photo!" } }
+      ]
+    }
+  }');
   return $items;
 }
