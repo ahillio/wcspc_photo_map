@@ -14,9 +14,7 @@ function wcspc_map_user_default_permissions() {
   $permissions['create photo content'] = array(
     'name' => 'create photo content',
     'roles' => array(
-      'manager' => 'manager',
-      'parent' => 'parent',
-      'youth' => 'youth',
+      'authenticated user' => 'authenticated user',
     ),
     'module' => 'node',
   );
