@@ -36,9 +36,9 @@ function wcspc_map_default_rules_configuration() {
       "ON" : { "user_insert" : [] },
       "DO" : [
         { "mail" : {
-            "to" : "sarahpetrokonis@wcspc.org",
+            "to" : "katenugent@wcspc.org",
             "subject" : "New user on wcspc.org",
-            "message" : "Hi Sarah, [account:name] just signed up on the website.  Their email address is [account:mail].  Thought I\\u0027d let you know.  -the Happy WCSPC Robot.",
+            "message" : "Hi Kate, [account:name] just signed up on the website.  Their email address is [account:mail].  Thought I\\u0027d let you know.  -the Happy WCSPC Robot.",
             "language" : [ "" ]
           }
         }
@@ -61,9 +61,9 @@ function wcspc_map_default_rules_configuration() {
       ],
       "DO" : [
         { "mail" : {
-            "to" : "sarahpetrokonis@wcspc.org",
+            "to" : "katenugent@wcspc.org",
             "subject" : "New photo awaits your approval",
-            "message" : "Hi Sarah, a new photo has been submitted.  You can review and publish it here [site:url]\\/admin\\/content\\/photos. -the Happy WCSPC Robot",
+            "message" : "Hi Kate, a new photo has been submitted.  You can review and publish it here [site:url]\\/admin\\/content\\/photos. -the Happy WCSPC Robot",
             "language" : [ "" ]
           }
         }
