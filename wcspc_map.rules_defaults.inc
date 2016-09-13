@@ -120,7 +120,8 @@ function wcspc_map_default_rules_configuration() {
             "roles" : { "value" : { "2" : "2" } },
             "operation" : "OR"
           }
-        }
+        },
+        { "NOT data_is" : { "data" : [ "site:url" ], "value" : "[account:one-time-login-url]" } }
       ],
       "DO" : [ { "redirect" : { "url" : "user\\/[account:uid]" } } ]
     }
